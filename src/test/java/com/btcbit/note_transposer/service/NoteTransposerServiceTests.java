@@ -5,13 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.btcbit.note_transposer.NoteTransposerTestBase;
 import com.btcbit.note_transposer.exception.NoteFileParsingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,9 +23,6 @@ class NoteTransposerServiceTests extends NoteTransposerTestBase {
 
     @Autowired
     private NoteTransposerService noteTransposerService;
-
-    @MockitoSpyBean
-    private ObjectMapper objectMapper;
 
     @Test
     void processNotesWithValidInput() throws IOException {
